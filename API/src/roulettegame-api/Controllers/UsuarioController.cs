@@ -5,7 +5,7 @@ using services.Usuario;
 
 namespace roulettegame_api.Controllers
 {
-    public class UsuarioController(IUsuario usuarioService) : Controller
+    public class UsuarioController(IUsuario usuarioService) : ControllerBase
     {
         [HttpPost("AddNewUserOrAddAmount")]
         public async Task<IActionResult> AddNewUserOrAddAmount([FromBody]UserDto user)

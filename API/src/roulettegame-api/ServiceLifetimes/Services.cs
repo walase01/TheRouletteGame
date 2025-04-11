@@ -1,4 +1,5 @@
-﻿using services.RandomNumber;
+﻿using services.Gambling;
+using services.RandomNumber;
 using services.Usuario;
 namespace roulettegame_api.ServiceLifetimes
 {
@@ -8,6 +9,7 @@ namespace roulettegame_api.ServiceLifetimes
         {
             services.AddScoped<IRandomNumber, RandomNumberService>();
             services.AddScoped<IUsuario, UsuarioService>();
+            services.AddScoped<IGamblingGame, GamblingGame>();            
             return services;
         }
     }
