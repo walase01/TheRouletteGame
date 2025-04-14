@@ -28,7 +28,7 @@ export const usuarioService = {
   async guardarSaldo(usuario: Usuario): Promise<AppResponse<string> | null> 
   {
     try {
-      const response = await axios.post<AppResponse<string>>(`${API_URL}/AddNewUser`, usuario);
+      const response = await axios.post<AppResponse<string>>(`${API_URL}/AddNewUserOrAddAmount`, usuario);
       return response.data;
     } catch (error: any) 
     {
