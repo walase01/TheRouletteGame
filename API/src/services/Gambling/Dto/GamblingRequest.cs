@@ -12,6 +12,7 @@ namespace services.Gambling.Dto
         public int Amount { get; set; }
         public int Number { get; set; }
         public string Color { get; set; }
-        public string Type { get; set; }
+        public string? Type { get; set; }
+        public double UserAmount { get; set; }
     }
 }

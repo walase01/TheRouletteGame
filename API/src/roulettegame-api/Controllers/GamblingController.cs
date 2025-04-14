@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using services.Gambling;
 using services.Gambling.Dto;
+using services.Response;
 
 namespace roulettegame_api.Controllers
 {
@@ -9,11 +10,11 @@ namespace roulettegame_api.Controllers
     [ApiConventionType(typeof(DefaultApiConventions))]
     public class GamblingController(IGamblingGame gamblingGame) : ControllerBase
     {
-        [HttpGet]
-        public IActionResult executeGamblingGame(GamblingRequest request)
+        [HttpPost]
+        public AppResponse<WinInfoByUser> executeGamblingGame([FromBody]GamblingRequest request)
         {
             var response = gamblingGame.Gambling(request);
-            return Ok(response);
+            return response;
         }
     }
 }

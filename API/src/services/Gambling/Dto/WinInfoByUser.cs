@@ -12,5 +12,6 @@ namespace services.Gambling.Dto
         public string WinningColor { get; set; }
         public bool Successful { get; set; }
         public double Award { get; set; }
+        public double UserAmount { get; set; }
     }
 }

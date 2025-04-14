@@ -14,5 +14,10 @@ namespace services.RandomNumber
             return new Random().Next(0, 35);
         }
 
+        public string generateRandomColorBetweenRedAndBlack()
+        {
+            return new Random().Next(0, 2) == 0 ? "rojo" : "negro";
+        }
+
     }
 }

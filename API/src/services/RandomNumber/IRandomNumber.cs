@@ -9,5 +9,6 @@ namespace services.RandomNumber
     public interface IRandomNumber
     {
         int generateRandomNumberBetween0and36();
+        string generateRandomColorBetweenRedAndBlack();
     }
 }

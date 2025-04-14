@@ -1,30 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <div class="bg-dark text-white p-3 vh-100" style="width: 220px;">
+      <h4 class="mb-4">🎮 Roulette</h4>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2">
+          <router-link to="/" class="nav-link text-white">Inicio</router-link>
+        </li>
+        <li class="nav-item mb-2">
+          <router-link to="/roulette" class="nav-link text-white">Jugar Ruleta</router-link>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="p-4 flex-fill animate__animated animate__fadeIn">
+      <router-view />
+    </div>
+  </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+body {
+  margin: 0;
 }
 </style>
