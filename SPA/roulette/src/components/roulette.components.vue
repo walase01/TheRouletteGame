@@ -16,6 +16,8 @@
           <option value="rojo">Rojo</option>
           <option value="negro">Negro</option>
           <option value="par-rojo">Par Rojo</option>
+          <option value="par-negro">Par Negro</option>
+          <option value="impar-rojo">Impar Rojo</option>
           <option value="impar-negro">Impar Negro</option>
           <option value="numero">Número + Color</option>
         </select>
@@ -53,7 +55,7 @@ import { gamblingrequest } from '../models/gamblingrequest.model';
   const apuesta = ref(0)
   const isLoading = ref(false);
   const tipoApuesta = ref('rojo')
-  const numeroApostado = ref(0)
+  const numeroApostado = ref(-1)
   const colorApostado = ref('rojo')
   const juegoIniciado = ref(false)
   const resultadoTexto = ref('')
@@ -91,11 +93,12 @@ import { gamblingrequest } from '../models/gamblingrequest.model';
 
     isLoading.value = false;
 
-    if(numeroApostado !== null && (numeroApostado.value < 0 || numeroApostado.value > 36)){
+    if(numeroApostado.value !== -1){
+      if(numeroApostado !== null && (numeroApostado.value < 0 || numeroApostado.value > 36)){
         toast.error(`El numero tiene que estar en el rando de 0 a 36`)
         return;
     }
-
+    }
 
     if (apuesta.value > saldo.value) {
         console.log("test",toast);        
@@ -109,9 +112,27 @@ import { gamblingrequest } from '../models/gamblingrequest.model';
 
     if(tipoApuesta.value === 'par-rojo'){
       _type = 'par';
+      colorApostado.value = 'rojo';
     }
     else if(tipoApuesta.value === 'impar-negro'){
       _type = 'impar';
+      colorApostado.value = 'negro';
+    }
+    else if (tipoApuesta.value === 'rojo'){
+      _type = null;
+      colorApostado.value = 'rojo';
+    }
+    else if (tipoApuesta.value === 'negro'){
+      _type = null;
+      colorApostado.value = 'negro';
+    }
+    else if (tipoApuesta.value === 'par-negro'){
+      _type = 'par';
+      colorApostado.value = 'negro';
+    }
+    else if (tipoApuesta.value === 'impar-rojo'){
+      _type = 'impar';
+      colorApostado.value = 'rojo';
     }
     else{
       _type = null;

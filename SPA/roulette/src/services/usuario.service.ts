@@ -3,7 +3,8 @@ import { Usuario } from '@/models/usuario.model';
 import { AppResponse } from '../models/response.model';
 
 
-const API_URL = 'https://localhost:7093/api/Usuario';
+// const API_URL = 'https://localhost:8090/api/Usuario'; // test
+const API_URL = 'https://localhost:7093/api/Usuario'; // local
 
 export const usuarioService = {
 

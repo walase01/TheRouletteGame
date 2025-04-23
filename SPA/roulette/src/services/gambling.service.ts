@@ -5,7 +5,8 @@ import { AppResponse } from '../models/response.model';
 import { WinInfoByUser } from "@/models/wininfobyuser.model";
 
 
-const API_URL = 'https://localhost:7093/api/Gambling';
+//const API_URL = 'https://localhost:8090/api/Gambling'; // test
+const API_URL = 'https://localhost:7093/api/Gambling'; // local
 
 export const gamblingService = {
     async jugar(gambling: gamblingrequest): Promise<AppResponse<WinInfoByUser>> {

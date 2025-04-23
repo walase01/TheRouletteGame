@@ -38,19 +38,17 @@ namespace services.Gambling
                 //validate odd or even + color
                 else if (request.Type != null &&
                          request.Color.Equals(winColor, StringComparison.CurrentCultureIgnoreCase) &&
-                        ((request.Type == "par" && oddOrEven) || (request.Type == "impar" && oddOrEven)))
+                        ((request.Type == "par" && oddOrEven) || (request.Type == "impar" && !oddOrEven)))
                 {
                     award = request.Amount;
                     successful = true;
-                }
+                }                
                 //validate the color 
-                else if (request.Type == null && request.Color.Equals(winColor, StringComparison.CurrentCultureIgnoreCase))
+                else if (request.Type == null && request.Number == -1 && request.Color.Equals(winColor, StringComparison.CurrentCultureIgnoreCase))
                 {
                     award = request.Amount * 0.5;
                     successful = true;
                 }
-
-                _ = successful ? award : -request.Amount;
 
                 if (successful)
                 {
