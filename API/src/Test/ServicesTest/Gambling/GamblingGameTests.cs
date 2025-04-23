@@ -40,11 +40,11 @@ namespace Test.ServicesTest.Gambling
             var response = game.Gambling(request);
 
             // Assert
-            Assert.True(response.Result.Successful);
-            Assert.Equal(800, response.Result.UserAmount); // 500 + (100 * 3)
-            Assert.Equal(300, response.Result.Award);
-            Assert.Equal("rojo", response.Result.WinningColor);
-            Assert.Equal(10, response.Result.WinningNumber);
+            Assert.True(response?.Result?.Successful);
+            Assert.Equal(800, response?.Result?.UserAmount); // 500 + (100 * 3)
+            Assert.Equal(300, response?.Result?.Award);
+            Assert.Equal("rojo", response?.Result?.WinningColor);
+            Assert.Equal(10, response?.Result?.WinningNumber);
         }
 
         [Fact]
